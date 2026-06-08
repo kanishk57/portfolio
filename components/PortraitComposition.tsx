@@ -39,11 +39,10 @@ export default function PortraitComposition({
         <div
           className="w-full h-full"
           style={{
-            backgroundImage: "url('/images/portrait.jpg')",
+            backgroundImage: "url('/images/portrait2.jpeg')",
             backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "grayscale(100%)",
-            opacity: 0.95,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "top center",
           }}
         />
       </motion.div>

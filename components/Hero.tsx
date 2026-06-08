@@ -31,7 +31,7 @@ export default function Hero() {
               }}
             >
               <h1
-                className={`font-heading text-hero leading-[0.85] ${word.color}`}
+                className={`font-heading font-bold text-[50px] sm:text-[80px] md:text-[90px] lg:text-[110px] xl:text-[130px] uppercase ${word.color}`}
               >
                 {word.text}
               </h1>
@@ -51,68 +51,20 @@ export default function Hero() {
         </motion.p>
       </div>
 
-      {/* Center — Portrait composition */}
-      <div className="hidden lg:flex flex-1 justify-center items-center relative z-10">
+      {/* Right — Portrait composition */}
+      <div className="hidden lg:flex flex-1 justify-end items-center relative z-10 lg:pr-10">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.5, ease: [0.77, 0, 0.175, 1] }}
-          className="relative"
+          initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 1.5, delay: 0.8, ease: [0.77, 0, 0.175, 1] }}
+          className="relative z-20 pointer-events-none"
         >
           <PortraitComposition variant="hero" />
 
-          {/* Overlapping typography */}
-          <motion.span
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 0.12, x: 0 }}
-            transition={{ delay: 1.5, duration: 1 }}
-            className="absolute top-1/3 -right-16 font-heading text-[120px] md:text-[160px] font-800 text-[var(--color-primary)] leading-none -rotate-90 origin-right pointer-events-none select-none"
-          >
-            K.
-          </motion.span>
+
         </motion.div>
       </div>
 
-      {/* Right — Minimal info */}
-      <motion.div
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1, duration: 0.8 }}
-        className="hidden lg:flex flex-col items-end gap-6 text-right relative z-10"
-      >
-        <div className="text-[var(--color-secondary)] text-[13px] uppercase tracking-widest space-y-1">
-          <p>Chandigarh, India</p>
-          <p>ML Engineer</p>
-        </div>
-
-        <div className="flex flex-col gap-3 text-[13px] uppercase tracking-widest">
-          <a
-            href="https://github.com/kanishk57"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-link text-[var(--color-secondary)] hover:text-[var(--color-accent)]"
-          >
-            GitHub ↗
-          </a>
-          <a
-            href="https://linkedin.com/in/kanishk"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-link text-[var(--color-secondary)] hover:text-[var(--color-accent)]"
-          >
-            LinkedIn ↗
-          </a>
-          <a
-            href="#contact"
-            className="nav-link text-[var(--color-accent)]"
-          >
-            Resume ↓
-          </a>
-        </div>
-
-        {/* Vertical line decoration */}
-        <div className="w-[1px] h-[80px] bg-[var(--color-accent)] opacity-50 mt-4" />
-      </motion.div>
 
       {/* Mobile portrait — shown below text on small screens */}
       <div className="lg:hidden absolute bottom-10 right-6 opacity-40">

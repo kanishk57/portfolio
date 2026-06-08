@@ -30,16 +30,15 @@ export default function About() {
           {/* Portrait in 16:10 frame container */}
           <div className="lg:col-span-8 w-full">
             <TextReveal delay={0.3}>
-              <div className="relative w-full aspect-[16/10] overflow-hidden shadow-xl bg-[var(--color-bg)] rounded-sm">
+              <div className="relative w-full aspect-[16/10] bg-transparent">
                 {/* Clean grayscale portrait */}
                 <div 
                   className="w-full h-full"
                   style={{
-                    backgroundImage: "url('/images/portrait.jpg')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    filter: "grayscale(100%)",
-                    opacity: 0.9,
+                    backgroundImage: "url('/images/portrait1.png')",
+                    backgroundSize: "contain",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "left bottom",
                   }}
                 />
               </div>
